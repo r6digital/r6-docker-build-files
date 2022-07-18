@@ -1,0 +1,10 @@
+{
+	supervisor {
+		php-fpm
+	}
+}
+
+:80
+php_fastcgi unix//var/run/php-fpm.sock
+root * /var/www/html/public
+file_server
