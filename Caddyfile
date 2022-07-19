@@ -1,10 +1,12 @@
 {
-	supervisor {
-		php-fpm
-	}
+        supervisor {
+                php-fpm
+        }
 }
 
 :80
-php_fastcgi unix//var/run/php-fpm.sock
+php_fastcgi localhost:9000 {
+        trusted_proxies private_ranges
+}
 root * /var/www/html/public
 file_server
