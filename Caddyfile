@@ -7,6 +7,7 @@
 :80
 php_fastcgi localhost:9000 {
         trusted_proxies private_ranges
+        header_up X-Forwarded-Proto https
         env HTTPS on
 }
 root * /var/www/html/public
